@@ -75,7 +75,8 @@ Vertex** BreathFirstSearch(Vertex* v)
 	{
 		Vertex* u=myqueue.front();
 		myqueue.pop();
-		int condition=false,t=0;
+		bool condition=false;
+		int t=0;
 		while(visited[t])
 		{
 			if(visited[t]->value==u->value)
