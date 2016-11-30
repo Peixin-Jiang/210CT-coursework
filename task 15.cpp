@@ -44,7 +44,7 @@ void dijkstra(Vertex** graph,Vertex* s,Vertex* d)
 		{
 			condition=false;
 			for(int j=0;j<t;j++)
-    	   {
+    	          {
 		 
 	            if(visited[j]->value==graph[i]->value)
 		       {
