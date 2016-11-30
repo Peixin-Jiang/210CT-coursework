@@ -22,41 +22,37 @@ public:
 
 void dijkstra(Vertex** graph,Vertex* s,Vertex* d)
 {
-	Vertex* v=s;
+    Vertex* v=s;
     s->tw=0;
     Vertex** visited=new Vertex*[10];
-    	int t=0;
+    int t=0;
     bool condition=false;
     while(v!=d)
     {
-    	//cout<<"WHILE"<<endl;
     	for(int i=0;i<v->k;i++)
     	{
     		if((v->tw+v->weight[i])<(v->AdjacentList[i]->tw))
     		{
     			v->AdjacentList[i]->tw=v->tw+v->weight[i];
-    			v->AdjacentList[i]->pre=v;
-        		cout<<"GRAPH tw=["<<graph[0]->tw<<"|"<<graph[1]->tw<<"|"<<graph[2]->tw<<"|"<<graph[3]->tw<<"|"<<graph[4]<<"]"<<endl; 
+    			v->AdjacentList[i]->pre=v; 
     		}
     	}
-    	break; // temp work
         visited[t]=v;
         t++;
-      int	min=1000;
+        int min=1000;
     	for(int i=0;i<5;i++)
-		{
-			condition=false;
-			for(int j=0;j<t;j++)
-    	   {
-    	   		//cout<<"CONDITION: j="<<j<<" t="<<t<<" visited="<<visited[j]->value<<" graph="<<graph[i]->value<<endl;
+	{
+		condition=false;
+		for(int j=0;j<t;j++)
+	}
 		 
-	            if(visited[j]->value==graph[i]->value)
-		       {
-		           	condition=true;
-			        break;
-	        	}
-        	}
-        	cout<<"LOOP "<<!condition<<" && "<<graph[i]->tw << "<" << min << &endl;
+        if(visited[j]->value==graph[i]->value)
+       {
+		condition=true;
+	        break;
+       }
+       }
+        	
         	if(!condition&&graph[i]->tw<min)
 		    {
 	     		v=graph[i];
